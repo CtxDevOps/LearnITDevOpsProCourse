@@ -1,0 +1,3 @@
+Zjawisko mniejszej liczby unikalnych klientow:
+
+Klienci tacy jak 10.0.3.14, 10.0.3.27 po maskowaniu staja sie jednym bytem typu 10.0.X.X
