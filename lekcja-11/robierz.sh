@@ -3,10 +3,10 @@
 # Przypisanie argumentu skryptu do zmiennej wejściowej
 input_filepath="$1"
 
-# 1. Katalog (odpowiednik dirname)
+# 1. Katalog
 directory_path="${input_filepath%/*}"
 
-# 2. Nazwa pliku (odpowiednik basename)
+# 2. Nazwa pliku 
 file_name="${input_filepath##*/}"
 
 # 3. Nazwa bez rozszerzenia
@@ -33,7 +33,7 @@ month_and_day="${date_string#*-}"
 # 7. Miesiąc
 month="${month_and_day%-*}"
 
-# 8. Nazwa wielkimi literami (wymaga Bash 4.0+)
+# 8. Nazwa wielkimi literami
 file_name_uppercase="${file_name^^}"
 
 # Wypisanie wyników
