@@ -1,16 +1,14 @@
 #!/bin/bash
 
-# Definicja funkcji pomocniczych, z których każda odpowiada za jedną sekcję
+# Definicja funkcji pomocniczych
 show_disk() {
     echo "=== Dysk ==="
-    # df -h to standardowy sposób wyświetlania zajętości dysków w czytelnym formacie (human-readable)
     df -h
     echo ""
 }
 
 show_memory() {
     echo "=== Pamięć ==="
-    # free -m wyświetla statystyki pamięci RAM w megabajtach
     free -m
     echo ""
 }
@@ -23,7 +21,6 @@ show_uptime() {
 
 show_network() {
     echo "=== Sieć (Adresy IP) ==="
-    # ip -brief address to nowoczesny zamiennik dla ifconfig, dający zwarty i czytelny wynik
     ip -brief address show
     echo ""
 }
@@ -42,7 +39,7 @@ show_help() {
 # Pobranie pierwszego argumentu skryptu
 command_arg="$1"
 
-# Instrukcja case sterująca przepływem na podstawie podanego argumentu
+# Instrukcja case sterująca na podstawie podanego argumentu
 case "${command_arg}" in
     dysk)
         show_disk
@@ -68,7 +65,7 @@ case "${command_arg}" in
         exit 0
         ;;
     *)
-        # Obsługa nieznanego polecenia (np. "kosmos")
+        # Obsługa polecenia kosmos (np. "kosmos")
         echo "Błąd: Nieznane polecenie '${command_arg}'." >&2
         show_help
         # Zakończenie działania z kodem 2
